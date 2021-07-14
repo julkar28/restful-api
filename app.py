@@ -11,7 +11,7 @@ CORS(app)
 
 class Jul(Resource):
     def get(self):
-        response = {"msg": requests.get('https://carnine.000webhostapp.com/kontak')}
+        response = {"msg": requests.get('https://carnine.000webhostapp.com/kontak').json()}
         return response
     
 
