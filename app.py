@@ -8,12 +8,13 @@ app = Flask(__name__)
 api = Api(app)
 
 CORS(app)
+r = requests.Session()
 
 class Jul(Resource):
     def get(self):
         ts = time.time()
         for i in range(20):
-            requests.get("https://shopee.co.id")
+            r.get("https://shopee.co.id")
         return time.time() - ts
 
     def post(self):
