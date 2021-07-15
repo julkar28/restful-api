@@ -18,9 +18,17 @@ class Jul(Resource):
         msg = update["message"]["text"]
         if msg == "/start":
             requests.get(api_url+"/sendmessage?chat_id="+str(chatid)+"&text=Haloo, test webhooks dicoffeean.com.&parse_mode=HTML")
+    def post(self):
+        token = "1789568173:AAHN3zAbvbVJmDeAPeHQSOlhynsKAfViVu4"
+        api_url = "https://api.telegram.org/bot"+token
+        update = request.json
+        chatid = update["message"]["chat"]["id"]
+        msg = update["message"]["text"]
+        if msg == "/start":
+            requests.get(api_url+"/sendmessage?chat_id="+str(chatid)+"&text=Haloo, test webhooks dicoffeean.com.&parse_mode=HTML")
         
     
 
-api.add_resource(Jul, "/api", methods=["GET"])
+api.add_resource(Jul, "/api", methods=["GET","POST"])
 if __name__ == "__main__":
     app.run(debug=True,port=5005)
