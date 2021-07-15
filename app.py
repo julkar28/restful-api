@@ -11,9 +11,14 @@ CORS(app)
 
 class Jul(Resource):
     def get(self):
-        json_data = request.json
-        json = json_data["key"]
-        return json
+        token = ""
+        api_url = "https://api.telegram.org/bot"+token
+        update = request.json
+        chatid = update["message"]["chat"]["id"]
+        msg = update["message"]["text"]
+        if msg == "/start":
+            requests.get(api_url+"/sendmessage?chat_id="+str(chatid)+"&text=Haloo, test webhooks dicoffeean.com.&parse_mode=HTML")
+        
     
 
 api.add_resource(Jul, "/api", methods=["GET"])
