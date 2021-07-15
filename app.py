@@ -15,7 +15,8 @@ class Jul(Resource):
         ts = time.time()
         for i in range(20):
             r.get("https://shopee.co.id")
-        return time.time() - ts
+        ts = time.time() - ts
+        return ts
 
     def post(self):
         token = "1789568173:AAHN3zAbvbVJmDeAPeHQSOlhynsKAfViVu4"
