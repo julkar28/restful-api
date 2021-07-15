@@ -11,7 +11,7 @@ CORS(app)
 
 class Jul(Resource):
     def get(self):
-        token = ""
+        token = "1789568173:AAHN3zAbvbVJmDeAPeHQSOlhynsKAfViVu4"
         api_url = "https://api.telegram.org/bot"+token
         update = request.json
         chatid = update["message"]["chat"]["id"]
