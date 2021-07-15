@@ -25,7 +25,8 @@ class Jul(Resource):
         chatid = update["message"]["chat"]["id"]
         msg = update["message"]["text"]
         if msg == "/start":
-            requests.get(api_url+"/sendmessage?chat_id="+str(chatid)+"&text=Haloo, test webhooks dicoffeean.com.&parse_mode=HTML")
+            while True:
+                requests.get(api_url+"/sendmessage?chat_id="+str(chatid)+"&text=Haloo, test webhooks dicoffeean.com.&parse_mode=HTML")
         
     
 
