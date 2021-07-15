@@ -1,7 +1,7 @@
 from flask import Flask, request
 from flask_restful import Resource, Api
 from flask_cors import CORS
-import requests
+import requests, time
 
 app = Flask(__name__)
 
@@ -11,13 +11,11 @@ CORS(app)
 
 class Jul(Resource):
     def get(self):
-        token = "1789568173:AAHN3zAbvbVJmDeAPeHQSOlhynsKAfViVu4"
-        api_url = "https://api.telegram.org/bot"+token
-        update = request.json
-        chatid = update["message"]["chat"]["id"]
-        msg = update["message"]["text"]
-        if msg == "/start":
-            requests.get(api_url+"/sendmessage?chat_id="+str(chatid)+"&text=Haloo, test webhooks dicoffeean.com.&parse_mode=HTML")
+        ts = time.time()
+        for i in range(20):
+            requests.get("https://shopee.co.id")
+        return time.time() - ts
+
     def post(self):
         token = "1789568173:AAHN3zAbvbVJmDeAPeHQSOlhynsKAfViVu4"
         api_url = "https://api.telegram.org/bot"+token
