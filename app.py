@@ -16,12 +16,12 @@ class Jul(Resource):
         token = "1789568173:AAHN3zAbvbVJmDeAPeHQSOlhynsKAfViVu4"
         api_url = "https://api.telegram.org/bot"+token
         chatid = 836261416
-        requests.get(api_url+"/sendmessage?chat_id="+str(chatid)+"&text=Haloo, test webhooks dicoffeean.com.&parse_mode=HTML")
+        ers = requests.get(api_url+"/sendmessage?chat_id="+str(chatid)+"&text=Haloo, test webhooks dicoffeean.com.&parse_mode=HTML").text
         #for i in range(20):
         #    r.get("https://shopee.co.id")
         #r.get("https://rest-api-jul.herokuapp.com/api")
         #ts = time.time() - ts
-        #return ts
+        return ers
 
     def post(self):
         token = "1789568173:AAHN3zAbvbVJmDeAPeHQSOlhynsKAfViVu4"
