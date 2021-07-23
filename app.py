@@ -19,7 +19,7 @@ class Jul(Resource):
         ers = requests.get(api_url+"/sendmessage?chat_id="+str(chatid)+"&text=Haloo, test webhooks dicoffeean.com.&parse_mode=HTML").text
         #for i in range(20):
         #    r.get("https://shopee.co.id")
-        #r.get("https://rest-api-jul.herokuapp.com/api")
+        r.get("https://rest-api-jul.herokuapp.com/api")
         #ts = time.time() - ts
         return ers
 
