@@ -33,9 +33,17 @@ class Jul(Resource):
             while True:
                 return 0
                 #requests.get(api_url+"/sendmessage?chat_id="+str(chatid)+"&text=Haloo, test webhooks dicoffeean.com.&parse_mode=HTML")
-        
+
+class Coba(Resource):
+	def get(self):
+		ts = time.time()
+		for i in range(100):
+			res = r.get("https://shopee.co.id")
+		return time.time() - ts
+			
     
 
 api.add_resource(Jul, "/api", methods=["GET","POST"])
+api.add_resource(Coba, "/api2", methods=["GET"])
 if __name__ == "__main__":
     app.run(debug=True,port=5005)
