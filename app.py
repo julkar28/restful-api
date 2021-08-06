@@ -43,7 +43,7 @@ class Coba(Resource):
 			
     
 
-api.add_resource(Jul, "/api", methods=["GET","POST"])
+# api.add_resource(Jul, "/api", methods=["GET","POST"])
 api.add_resource(Coba, "/api2", methods=["GET"])
 if __name__ == "__main__":
     app.run(debug=True,port=5005)
